@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  #????
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  application:
+    name: orderBy
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://127.0.0.1:3306/test
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0
+  try-host: http://localhost:${server.port}

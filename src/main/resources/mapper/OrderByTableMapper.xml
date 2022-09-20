@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uin.orderbydemo.mapper.OrderByTableMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.uin.orderbydemo.pojo.OrderByTable">
+        <id column="ID" property="id" />
+        <result column="SCORE" property="score" />
+        <result column="CREATED_TIME" property="createdTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, SCORE, CREATED_TIME
+    </sql>
+
+    <insert id="addOrder" parameterType="com.uin.orderbydemo.pojo.OrderByTable">
+        insert into ORDER_BY_TABLE (ID, SCORE, CREATED_TIME)
+        values (#{table.id},#{table.score},#{table.createdTime})
+    </insert>
+
+</mapper>
